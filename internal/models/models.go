@@ -6,16 +6,9 @@ import (
 	"github.com/google/uuid"
 )
 
-type (
-	UID uuid.UUID // User id
-	WID uuid.UUID // Wallet id
-	TID uuid.UUID // Transaction id
-	HID uuid.UUID // History id
-)
-
 // User accaunt
 type User struct {
-	ID           UID
+	ID           uuid.UUID
 	Username     string
 	PasswordHash string
 	Email        string
@@ -25,8 +18,8 @@ type User struct {
 }
 
 type Wallet struct {
-	ID        WID
-	UserID    UID
+	ID        uuid.UUID
+	UserID    uuid.UUID
 	Balance   float64
 	Currency  string
 	CreatedAt time.Time
@@ -34,8 +27,8 @@ type Wallet struct {
 }
 
 type Transaction struct {
-	ID          TID
-	WalletID    WID
+	ID          uuid.UUID
+	WalletID    uuid.UUID
 	Amount      float64
 	Type        string // "deposit", "withdrawal", "transfer"
 	Status      string // "pending", "completed", "failed"
