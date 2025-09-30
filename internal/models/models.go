@@ -6,7 +6,6 @@ import (
 	"github.com/google/uuid"
 )
 
-// User accaunt
 type User struct {
 	ID           uuid.UUID
 	Username     string
