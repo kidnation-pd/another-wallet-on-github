@@ -21,9 +21,9 @@ type User struct {
 	Email        string
 	Phone        string
 	CreatedAt    time.Time
+	DeletedAt    time.Time
 }
 
-// User wallet
 type Wallet struct {
 	ID        WID
 	UserID    UID
@@ -33,7 +33,6 @@ type Wallet struct {
 	UpdatedAt time.Time
 }
 
-// Transaction
 type Transaction struct {
 	ID          TID
 	WalletID    WID
@@ -42,16 +41,4 @@ type Transaction struct {
 	Status      string // "pending", "completed", "failed"
 	Description string
 	CreatedAt   time.Time
-}
-
-// Operation history
-type History struct {
-	ID            HID
-	TransactionID TID
-	FromWalletID  WID
-	ToWalletID    WID
-	Amount        float64
-	Currency      string
-	Status        string
-	CreatedAt     time.Time
 }
